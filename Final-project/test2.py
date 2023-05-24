@@ -151,9 +151,9 @@ def start(objpar):
             # cv2.imshow('OpenCV Feed', image)
             image1=QtGui.QImage(image.data, image.shape[1], image.shape[0], QtGui.QImage.Format_RGB888).rgbSwapped()
             obj.image_label.setPixmap(QtGui.QPixmap.fromImage(image1))
-
+            cv2.waitKey(40)
             # Break gracefully
-            if cv2.waitKey(10) & 0xFF == ord('q'):
-                break
+            # if cv2.waitKey(10) & 0xFF == ord('q'):
+            #     break
         cap.release()
         cv2.destroyAllWindows()
